@@ -276,7 +276,7 @@ private fun TableLayout(state: GameState, viewModel: GameViewModel) {
 @Preview(showBackground = true, backgroundColor = 0xFF071F10)
 @Composable
 fun TableLayoutPreview() {
-    val viewModel = GameViewModel()
+    val viewModel: GameViewModel = viewModel()
     val state = viewModel.gameState.collectAsState().value
     TableLayout(state = state, viewModel = viewModel)
 }
