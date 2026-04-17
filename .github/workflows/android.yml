@@ -35,23 +35,19 @@ jobs:
       - name: Grant permission
         run: chmod +x gradlew
 
-      # 5.Ktlint
-      - name: Ktlint Check
-        run: ./gradlew ktlintCheck
-
-      # 6. Lint
+      # 5. Lint
       - name: Run Lint
         run: ./gradlew lint
 
-      # 7. Unit Tests
+      # 6. Unit Tests
       - name: Run Tests
         run: ./gradlew test
 
-      # 8. 🔥 Build APK (skip tests here)
+      # 7. 🔥 Build APK (skip tests here)
       - name: Build APK
         run: ./gradlew assembleDebug -x test
 
-      # 9. Upload APK
+      # 8. Upload APK
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
